@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/favicons/favicon-16x16.png">
+    <link rel="manifest" href="~/Content/favicons/site.webmanifest">
+    <link rel="mask-icon" href="~/Content/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Page Designer : Umamaheswari Dharmalingam</title>
+    @Styles.Render("~/Content/uidesigncss")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+<body class="edit">
+
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-layoutit">
+        <a class="navbar-brand navbar-brand-logo" href="#">
+            <img src="~/Content/images/ud-logo-white.png" alt="Uma Website Logo" width="24" height="24">
+        </a>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Page Designer</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav" id="menu-layoutit">
+                <li>
+                    <div class="btn-group" data-toggle="buttons-radio">
+                        <button type="button" id="edit" class="active btn btn-sm btn-primary"><i class="glyphicon glyphicon-edit "></i> Edit</button>
+                        <button type="button" class="btn btn-sm btn-primary" id="devpreview"><i class="glyphicon-eye-close glyphicon"></i> Developer</button>
+                        <button type="button" class="btn btn-sm btn-primary" id="sourcepreview"><i class="glyphicon-eye-open glyphicon"></i> Preview</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-primary" id="button-download-modal" data-target="#downloadModal" role="button" data-toggle="modal"><i class="glyphicon-chevron-down glyphicon"></i> Download</button>
+                        <button class="btn btn-sm btn-primary disabled" disabled="disabled" id="button-share-modal" href="/share/indexV3" role="button" data-toggle="modal" data-target="#shareModal"><i class="glyphicon-share glyphicon"></i> Save</button>
+                        <button class="btn btn-sm btn-primary" href="#clear" id="clear"><i class="glyphicon-trash glyphicon"></i> Clear</button>
+                    </div>
+                </li>
+            </ul>
+        </div><!--/.navbar-collapse -->
+    </div><!--/.navbar-fixed-top -->
+
+
+
+    <div class="container">
+        <div class="row">
+            @RenderBody()
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Download</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="download-logged" class="">
+                        <p>This is the generated source, you can copy &amp; paste it in our own HTML.</p>
+                        <p><textarea></textarea></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/uidesigner/jquery.min.js"></script>
+    <script src="~/Scripts/uidesigner/jquery-ui.min.js"></script>
+    <script src="~/Scripts/uidesigner/jquery.ui.touch-punch.min.js"></script>
+    <script src="~/Scripts/uidesigner/bootstrap.min.js"></script>
+    @Scripts.Render("~/bundles/uidesignerjs")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

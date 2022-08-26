@@ -1,0 +1,8 @@
+﻿.bordered {
+  border-bottom: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+}
+.clear {
+  clear: both;
+}
